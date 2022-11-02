@@ -14,12 +14,14 @@ before_script:
   - echo "no tests"
 
 script:
-  - docker --version # print the version for logging
-  - docker-compose -f docker-compose-build.yaml build --parallel
-  - docker tag udagram-frontend thongnq2/udagram-frontend:v1
+  - docker --version
+  - docker build -t udagram-api-feed ./udagram-api-feed
   - docker tag udagram-api-feed thongnq2/udagram-api-feed:v1
+  - docker build -t udagram-api-user ./udagram-api-user
   - docker tag udagram-api-user thongnq2/udagram-api-user:v1
-  - docker tag udagram-api-user thongnq2/udagram-api-user:v1
+  - docker build -t udagram-frontend ./udagram-frontend
+  - docker tag udagram-frontend thongnq2/udagram-frontend:v1
+  - docker build -t reverseproxy ./udagram-reverseproxy
   - docker tag reverseproxy thongnq2/reverseproxy:v1
 
 after_success:
