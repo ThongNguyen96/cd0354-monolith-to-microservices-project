@@ -18,20 +18,17 @@ spec:
         - name: backend-user
           imagePullPolicy: Always
           image: thongnq2/udagram-api-user:v1
-          envFrom:
-            - configMapRef:
-                name: env-configmap
-            - configMapRef:
-                name: env-secret
+          ports:
+            - containerPort: 8080
           env:
             - name: POSTGRES_USERNAME
               valueFrom:
-                configMapKeyRef:
+                secretKeyRef:
                   name: env-secret
                   key: POSTGRES_USERNAME
             - name: POSTGRES_PASSWORD
               valueFrom:
-                configMapKeyRef:
+                secretKeyRef:
                   name: env-secret
                   key: POSTGRES_PASSWORD
             - name: POSTGRES_HOST

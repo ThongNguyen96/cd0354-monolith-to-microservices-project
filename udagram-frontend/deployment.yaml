@@ -16,6 +16,8 @@ spec:
     spec:
       containers:
         - name: udagram-frontend
+          ports:
+            - containerPort: 80
           imagePullPolicy: Always
           image: thongnq2/udagram-frontend:v1
           envFrom:
