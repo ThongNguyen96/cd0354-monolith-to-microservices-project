@@ -27,10 +27,11 @@ import {V0_USER_MODELS} from './controllers/v0/model.index';
       'Origin', 'X-Requested-With',
       'Content-Type', 'Accept',
       'X-Access-Token', 'Authorization',
+      'a8b6ea4b8ce7e46fd8b079083864ac1a-1173064132.us-east-1.elb.amazonaws.com'
     ],
     methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
     preflightContinue: true,
-    origin: '*',
+    origin: ['*', 'a8b6ea4b8ce7e46fd8b079083864ac1a-1173064132.us-east-1.elb.amazonaws.com'],
   }));
 
   app.use('/api/v0/', IndexRouter);
