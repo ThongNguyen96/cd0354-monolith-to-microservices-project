@@ -19,6 +19,13 @@ spec:
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "1024Mi"
+              cpu: "500m" 
           image: thongnq2/udagram-api-feed:v1
           env:
             - name: POSTGRES_USERNAME
