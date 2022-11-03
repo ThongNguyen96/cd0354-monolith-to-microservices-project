@@ -37,5 +37,5 @@ services:
   frontend:
     image: udagram-frontend
     ports:
-        - 8100:8100
+        - 8100:80
   
